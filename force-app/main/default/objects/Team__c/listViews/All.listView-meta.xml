@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Team__c</columns>
+    <columns>Win__c</columns>
+    <columns>First_Blood__c</columns>
+    <columns>First_Tower__c</columns>
+    <columns>First_Inhibitor__c</columns>
+    <columns>First_Baron__c</columns>
+    <columns>First_Dragon__c</columns>
+    <columns>First_Rift_Heral__c</columns>
+    <columns>Tower_Kills__c</columns>
+    <columns>Baron_Kills__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>
