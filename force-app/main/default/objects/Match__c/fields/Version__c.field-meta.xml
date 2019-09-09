@@ -11,9 +11,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Value1</fullName>
+                <fullName>9.17.287.2485</fullName>
                 <default>false</default>
-                <label>Value1</label>
+                <label>9.17.287.2485</label>
             </value>
         </valueSetDefinition>
     </valueSet>
