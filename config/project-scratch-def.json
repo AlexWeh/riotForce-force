@@ -1,7 +1,7 @@
 {
-  "orgName": "alex Company",
+  "orgName": "riotForce Company",
   "edition": "Developer",
-  "features": [],
+  "features": ["API", "DebugApex"],
   "settings": {
     "orgPreferenceSettings": {
       "s1DesktopEnabled": true
