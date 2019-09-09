@@ -154,8 +154,9 @@
     <enableStreamingApi>true</enableStreamingApi>
     <label>Team</label>
     <nameField>
-        <label>Team</label>
-        <type>Text</type>
+        <displayFormat>TeamID {000000}</displayFormat>
+        <label>TeamID</label>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Teams</pluralLabel>
     <searchLayouts/>
