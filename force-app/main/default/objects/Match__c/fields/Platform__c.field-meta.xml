@@ -8,13 +8,6 @@
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetDefinition>
-            <sorted>false</sorted>
-            <value>
-                <fullName>EUW1</fullName>
-                <default>false</default>
-                <label>EUW1</label>
-            </value>
-        </valueSetDefinition>
+        <valueSetName>Platform</valueSetName>
     </valueSet>
 </CustomField>
