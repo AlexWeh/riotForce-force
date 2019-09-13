@@ -18,10 +18,10 @@ public with sharing class RiotMatchIdRequester {
         
         if(response.getStatusCode() == 200){
             Match = (RiotJSON) JSON.deserialize(response.getBody(), RiotJSON.class);
-            matchObject = new matchObject(Match);
-            matchObject.initsObjects();
+            matchObject = new RiotMatchObjectParser(Match);
+            matchObject.initsObject();
         }
-        
+
         else {
             System.debug('Response Code:' + response.getStatusCode());
             System.debug(response.getBody());
