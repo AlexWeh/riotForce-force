@@ -6,7 +6,15 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>RiotJSON</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RiotMatchIdRequester</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RiotMatchObjectParser</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
@@ -63,6 +71,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Participant__c.Champion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Participant__c.Participant_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

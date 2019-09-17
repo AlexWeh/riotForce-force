@@ -155,7 +155,7 @@
     <label>Participant</label>
     <nameField>
         <displayFormat>ParticipantID {0000}</displayFormat>
-        <label>ParticipantID</label>
+        <label>Name</label>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Participants</pluralLabel>

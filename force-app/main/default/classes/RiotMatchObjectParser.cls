@@ -1,57 +1,80 @@
 public with sharing class RiotMatchObjectParser {
 
-private RiotJSON Match;
+    private RiotJSON Match;
+    public Match__c riotMatch;
+    public List<Player__c> playerList;
+    List<Participant__c> participantList;
+
 
     public RiotMatchObjectParser(RiotJSON Match) {
         this.Match = Match;
     }
 
     public void initsObject(){
-        createMatch();
-        createPlayer();
-        createParticipant();
-        createTeam();
+
     }
 
     public void createMatch(){
-        String name = String.valueOf(Match.gameId);
-        DateTime gameCreationTime = DateTime.newInstance(Match.gameCreation);
-        String mapIdString = String.valueOf(Match.mapId);
-        String gameModeString = String.valueOf(Match.gameMode);
-        String queueIdString = String.valueOf(Match.queueId);
-        String seasonIdString = String.valueOf(Match.seasonId);
+        List<Match__c> existingMatches = [SELECT Id, Name FROM Match__c];
+        List<String> existingMatchNames = new List<String>();
 
-        Match__c riotMatch =  new Match__c(Name = name);
-        
-        riotMatch.Creation_Time__c = gameCreationTime;
-        riotMatch.Duration__c = Match.gameDuration;
-        riotMatch.Map__c = mapIdString;
-        riotMatch.Mode__c = gameModeString;
-        riotMatch.Platform__c = Match.platformId;
-        riotMatch.Queue__c = queueIdString;
-        riotMatch.Season__c = seasonIdString;
-        riotMatch.Type__c = Match.gameType;
-        riotMatch.Version__c = Match.gameVersion;
+        for (Match__c match : existingMatches) {
+            existingMatchNames.add(match.Name);
+        }
+
+        if (!existingMatchNames.contains(String.valueOf(Match.gameId))) {
+            riotMatch =  new Match__c(Name = String.valueOf(Match.gameId));
+            
+            riotMatch.Creation_Time__c = DateTime.newInstance(Match.gameCreation);
+            riotMatch.Season__c = String.valueOf(Match.seasonId);
+            riotMatch.Mode__c = String.valueOf(Match.gameMode);
+            riotMatch.Queue__c = String.valueOf(Match.queueId);
+            riotMatch.Map__c = String.valueOf(Match.mapId);
+            riotMatch.Duration__c = Match.gameDuration;
+            riotMatch.Platform__c = Match.platformId;
+            riotMatch.Version__c = Match.gameVersion;
+            riotMatch.Type__c = Match.gameType;
+        }
+        else {
+            System.debug('Match: ' + Match.gameId + ' already exists.');
+        }
     }
 
     public void createPlayer(){
-        List<Player__c> playerList = new List<Player__c>();
+        playerList = new List<Player__c>();
+        List<Player__c> existingPlayers = [SELECT Id, Summoner_ID__c FROM Player__c];
+        List<String> existingPlayerIds = new List<String>();
+
+        for (Player__c player : existingPlayers) {
+            existingPlayerIds.add(player.Summoner_ID__c);
+        }
+
         for (RiotJSON.ParticipantIdentities idPlayer : Match.participantIdentities) {
-            Player__c riotPlayer = new Player__c(Name = idPlayer.player.summonerName);
-            riotPlayer.Account_ID__c = idPlayer.player.accountId;
-            riotPlayer.Platform__c = idPlayer.player.platformId;
-            riotPlayer.Profile_Icon_ID__c = idPlayer.player.profileIcon;
-            riotPlayer.Summoner_ID__c = idPlayer.player.summonerId;
-            playerList.add(riotPlayer);
+            if (!existingPlayerIds.contains(idPlayer.player.summonerId)) {
+                Player__c riotPlayer = new Player__c(Name = idPlayer.player.summonerName);
+
+                riotPlayer.Profile_Icon_ID__c = idPlayer.player.profileIcon;
+                riotPlayer.Summoner_ID__c = idPlayer.player.summonerId;
+                riotPlayer.Account_ID__c = idPlayer.player.accountId;
+                riotPlayer.Platform__c = idPlayer.player.platformId;
+                playerList.add(riotPlayer);
+            }
+            else {
+                System.debug('Player: ' + idPlayer.player.summonerName + ', ' + idPlayer.player.summonerId + ' already exists.');
+            }
         }
     }
 
     public void createParticipant(){
-
+        participantList = new List<Participant__c>();
+        for (RiotJson.Participant participant : Match.participants) {
+            Participant__c riotParticipant = new Participant__c(Participant_ID__c = String.valueOf(participant.participantId));
+            riotParticipant.Spell_1__c = String.valueOf(participant.spell1Id);
+            riotParticipant.Spell_2__c = String.valueOf(participant.spell2Id);
+        }
     }
 
     public void createTeam(){
-
     }
 
     public void createChampion(){

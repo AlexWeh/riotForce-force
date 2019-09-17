@@ -23,10 +23,10 @@ public with sharing class RiotJSON {
 	public String gameMode;
 	public String gameType;
 	public List<Teams> teams;
-	public List<Participants> participants;
+	public List<Participant> participants;
 	public List<ParticipantIdentities> participantIdentities;
 
-	public class Participants {
+	public class Participant {
 		public Integer participantId;
 		public Integer teamId;
 		public Integer championId;
