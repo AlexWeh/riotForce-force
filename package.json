@@ -1,0 +1,23 @@
+{
+  "name": "riotforce",
+  "version": "1.0.0",
+  "description": "This is a demo/learning project to connect the Riot Games League of Legends API with Salesforce as database. The match history and player information are reflected into sObjects.  The plattform offers different options to interact, written as lwc (lightning web components) and the data is requested using APEX callouts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProtonPS/RiotForce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProtonPS/RiotForce/issues"
+  },
+  "homepage": "https://github.com/ProtonPS/RiotForce#readme",
+  "devDependencies": {
+    "prettier": "1.18.2",
+    "prettier-plugin-apex": "1.0.0-rc.6"
+  }
+}
