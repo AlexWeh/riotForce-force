@@ -33,7 +33,7 @@ public with sharing class RiotMatchObjectParser {
             riotMatch.Platform__c = Match.platformId;
             riotMatch.Version__c = Match.gameVersion;
             riotMatch.Type__c = Match.gameType;
-            insertMatch();
+            insertMatch(riotMatch);
         } else {
             System.debug('Match: ' + Match.gameId + ' already exists.');
         }
