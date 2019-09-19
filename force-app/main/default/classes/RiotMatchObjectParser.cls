@@ -129,6 +129,8 @@ public with sharing class RiotMatchObjectParser {
 
     public void insertTeams(Team__c blueTeam, Team__c redTeam) {
         List<Team__c> tempTeams = new List<Team__c>();
+        tempTeams.add(blueTeam);
+		tempTeams.add(redTeam);
         System.Savepoint sp = Database.setSavePoint();
 
         try {
@@ -145,7 +147,7 @@ public with sharing class RiotMatchObjectParser {
         participantList = new List<Participant__c>();
         for (RiotJson.Participant participant : Match.participants) {
             Participant__c riotParticipant = new Participant__c(
-            } else {
+                Participant_ID__c = String.valueOf(participant.participantId)
             );
             riotParticipant.Spell_1__c = String.valueOf(participant.spell1Id);
             riotParticipant.Spell_2__c = String.valueOf(participant.spell2Id);
@@ -155,6 +157,7 @@ public with sharing class RiotMatchObjectParser {
             } else {
                 riotParticipant.Team__c = redTeam.Id;
             }
+            participantList.add(riotParticipant);
             counter++;
         }
         insertParticipant(participantList);
