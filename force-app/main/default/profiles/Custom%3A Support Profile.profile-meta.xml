@@ -24,6 +24,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Match__c.Blue_Team__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Match__c.Creation_Time__c</field>
         <readable>false</readable>
@@ -235,6 +240,9 @@
     </fieldPermissions>
     <layoutAssignments>
         <layout>Champion__c-Champion Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Match__c-Match Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Participant__c-Participant Layout</layout>

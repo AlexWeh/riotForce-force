@@ -22,7 +22,7 @@ public with sharing class RiotJSON {
 	public String gameVersion;
 	public String gameMode;
 	public String gameType;
-	public List<Teams> teams;
+	public List<Team> teams;
 	public List<Participant> participants;
 	public List<ParticipantIdentities> participantIdentities;
 
@@ -143,7 +143,7 @@ public with sharing class RiotJSON {
 		public Integer statPerk2;
 	}
 
-	public class Teams {
+	public class Team {
 		public Integer teamId;
 		public String win;
 		public Boolean firstBlood;

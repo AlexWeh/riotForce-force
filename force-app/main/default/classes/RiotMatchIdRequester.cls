@@ -1,7 +1,7 @@
 public with sharing class RiotMatchIdRequester {
 
     private static String RIOT_MATCH_ENDPOINT = '/lol/match/v4/matches/';
-    private static String API_KEY = 'RGAPI-5b828344-d4e2-4f1e-a94d-1308f88e3c73'; 
+    private static String API_KEY = 'RGAPI-a3ee7775-25e6-4fc1-90e8-b86523d07c5e'; 
     private RiotJSON Match;
     private RiotMatchObjectParser matchObject;
 
@@ -19,7 +19,7 @@ public with sharing class RiotMatchIdRequester {
         if(response.getStatusCode() == 200){
             Match = (RiotJSON) JSON.deserialize(response.getBody(), RiotJSON.class);
             matchObject = new RiotMatchObjectParser(Match);
-            matchObject.initsObject();
+            matchObject.initObjects();
         }
 
         else {
