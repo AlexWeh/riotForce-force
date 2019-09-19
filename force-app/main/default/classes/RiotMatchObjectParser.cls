@@ -145,7 +145,7 @@ public with sharing class RiotMatchObjectParser {
         participantList = new List<Participant__c>();
         for (RiotJson.Participant participant : Match.participants) {
             Participant__c riotParticipant = new Participant__c(
-                Participant_ID__c = String.valueOf(participant.participantId)
+            } else {
             );
             riotParticipant.Spell_1__c = String.valueOf(participant.spell1Id);
             riotParticipant.Spell_2__c = String.valueOf(participant.spell2Id);
