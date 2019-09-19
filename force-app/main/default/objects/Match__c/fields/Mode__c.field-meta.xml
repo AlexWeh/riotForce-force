@@ -7,13 +7,12 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>false</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
                 <fullName>CLASSIC</fullName>
                 <default>false</default>
-                <label>Classic Summoner's Rift</label>
+                <label>Classic Summoner&#39;s Rift</label>
             </value>
         </valueSetDefinition>
     </valueSet>
