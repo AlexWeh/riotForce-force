@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
-        <fullName>EUW1</fullName>
+        <fullName>BR1</fullName>
         <default>false</default>
-        <label>EUW1</label>
+        <label>BR1</label>
     </customValue>
     <customValue>
         <fullName>EUN1</fullName>
@@ -11,9 +11,59 @@
         <label>EUN1</label>
     </customValue>
     <customValue>
+        <fullName>EUW1</fullName>
+        <default>false</default>
+        <label>EUW1</label>
+    </customValue>
+    <customValue>
+        <fullName>JP1</fullName>
+        <default>false</default>
+        <label>JP1</label>
+    </customValue>
+    <customValue>
+        <fullName>KR</fullName>
+        <default>false</default>
+        <label>KR</label>
+    </customValue>
+    <customValue>
+        <fullName>LA1</fullName>
+        <default>false</default>
+        <label>LA1</label>
+    </customValue>
+    <customValue>
+        <fullName>LA2</fullName>
+        <default>false</default>
+        <label>LA2</label>
+    </customValue>
+    <customValue>
+        <fullName>NA</fullName>
+        <default>false</default>
+        <label>NA</label>
+    </customValue>
+    <customValue>
+        <fullName>NA1</fullName>
+        <default>false</default>
+        <label>NA1</label>
+    </customValue>
+    <customValue>
+        <fullName>OC1</fullName>
+        <default>false</default>
+        <label>OC1</label>
+    </customValue>
+    <customValue>
         <fullName>TR1</fullName>
         <default>false</default>
         <label>TR1</label>
+    </customValue>
+    <customValue>
+        <fullName>RU</fullName>
+        <default>false</default>
+        <label>RU</label>
+    </customValue>
+    <customValue>
+        <fullName>PBE1</fullName>
+        <default>false</default>
+        <label>PBE1</label>
     </customValue>
     <masterLabel>Platform</masterLabel>
     <sorted>false</sorted>
