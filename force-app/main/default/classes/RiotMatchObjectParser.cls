@@ -15,7 +15,6 @@ public with sharing class RiotMatchObjectParser {
         createMatch();
         createPlayer();
         createParticipant();
-        System.debug('Ende');
     }
 
     public void createMatch() {
@@ -56,6 +55,8 @@ public with sharing class RiotMatchObjectParser {
             System.debug(e);
             Database.rollback(sp);
         }
+
+        System.debug('Created Match with Id: ' + match.Id);
     }
 
     public void createPlayer() {
@@ -71,7 +72,9 @@ public with sharing class RiotMatchObjectParser {
             existingPlayerIds.add(player.Summoner_ID__c);
         }
 
-        for (RiotJSON.ParticipantIdentities idPlayer : Match.participantIdentities) {
+        for (
+            RiotJSON.ParticipantIdentities idPlayer : Match.participantIdentities
+        ) {
             if (!existingPlayerIds.contains(idPlayer.player.summonerId)) {
                 Player__c riotPlayer = new Player__c(
                     Name = idPlayer.player.summonerName
@@ -84,7 +87,6 @@ public with sharing class RiotMatchObjectParser {
                 playerList.add(riotPlayer);
             } else {
                 playerList.add(existingPlayers[counter]);
-                //System.debug('Player: ' + idPlayer.player.summonerName + ', ' + idPlayer.player.summonerId + ' already exists.');
             }
             counter++;
         }
@@ -100,6 +102,14 @@ public with sharing class RiotMatchObjectParser {
             System.debug(e);
             Database.rollback(sp);
         }
+        for (Player__c player : playerList) {
+            System.debug(
+                'Created Player with Id: ' +
+                player.Id +
+                ' and Name: ' +
+                player.Name
+            );
+        }
     }
 
     public void createTeam() {
@@ -109,16 +119,15 @@ public with sharing class RiotMatchObjectParser {
         if (Match.teams[0].win == 'Win') {
             blueTeam.Win__c = true;
             blueTeam.Win__c = false;
-        }else if (Match.teams[0].win == 'Fail') {
+        } else if (Match.teams[0].win == 'Fail') {
             blueTeam.Win__c = false;
             blueTeam.Win__c = true;
         }
-        
 
         insertTeams(blueTeam, redTeam);
     }
 
-    public void insertTeams(Team__c blueTeam, Team__c redTeam){
+    public void insertTeams(Team__c blueTeam, Team__c redTeam) {
         List<Team__c> tempTeams = new List<Team__c>();
         System.Savepoint sp = Database.setSavePoint();
 
@@ -128,13 +137,13 @@ public with sharing class RiotMatchObjectParser {
             System.debug(e);
             Database.rollback(sp);
         }
-	} 
+        System.debug('Created Blue & Red Team');
+    }
 
     public void createParticipant() {
         Integer counter = 0;
         participantList = new List<Participant__c>();
         for (RiotJson.Participant participant : Match.participants) {
-
             Participant__c riotParticipant = new Participant__c(
                 Participant_ID__c = String.valueOf(participant.participantId)
             );
@@ -143,15 +152,15 @@ public with sharing class RiotMatchObjectParser {
             riotParticipant.Player__c = playerList[counter].Id;
             if (participant.teamId == 100) {
                 riotParticipant.Team__c = blueTeam.Id;
-            }else {
+            } else {
                 riotParticipant.Team__c = redTeam.Id;
             }
-            counter ++;
+            counter++;
         }
         insertParticipant(participantList);
     }
 
-    public void insertParticipant(List<Participant__c> participantList){
+    public void insertParticipant(List<Participant__c> participantList) {
         System.Savepoint sp = Database.setSavePoint();
 
         try {
@@ -160,10 +169,14 @@ public with sharing class RiotMatchObjectParser {
             System.debug(e);
             Database.rollback(sp);
         }
-	} 
+        for (Participant__c participant : participantList) {
+            System.debug(
+                'Created Participant with Id: ' +
+                participant.Id
+            );
+        }
+    }
 
     public void createChampion() {
     }
-
-	
 }
