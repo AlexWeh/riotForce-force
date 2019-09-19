@@ -5,45 +5,48 @@ public with sharing class RiotMatchObjectParser {
     public List<Participant__c> participantList;
     public Team__c blueTeam;
     public Team__c redTeam;
+    public List<Champion__c> championList;
 
     public RiotMatchObjectParser(RiotJSON Match) {
         this.Match = Match;
     }
 
     public void initObjects() {
-        createTeam();
-        createMatch();
-        createPlayer();
-        createParticipant();
-    }
-
-    public void createMatch() {
+        championList = [SELECT Id, Name, Champion_ID__c FROM Champion__c];
         List<Match__c> existingMatches = [SELECT Id, Name FROM Match__c];
         List<String> existingMatchNames = new List<String>();
-
         for (Match__c match : existingMatches) {
             existingMatchNames.add(match.Name);
         }
 
         if (!existingMatchNames.contains(String.valueOf(Match.gameId))) {
-            riotMatch = new Match__c(Name = String.valueOf(Match.gameId));
-
-            riotMatch.Creation_Time__c = DateTime.newInstance(
-                Match.gameCreation
-            );
-            riotMatch.Season__c = String.valueOf(Match.seasonId);
-            riotMatch.Mode__c = String.valueOf(Match.gameMode);
-            riotMatch.Queue__c = String.valueOf(Match.queueId);
-            riotMatch.Map__c = String.valueOf(Match.mapId);
-            riotMatch.Duration__c = Match.gameDuration;
-            riotMatch.Platform__c = Match.platformId;
-            riotMatch.Version__c = Match.gameVersion;
-            riotMatch.Type__c = Match.gameType;
-            riotMatch.Blue_Team__c = blueTeam.Id;
-            insertMatch(riotMatch);
+            createTeam();
+            createMatch();
+            createPlayer();
+            createParticipant();
         } else {
             System.debug('Match: ' + Match.gameId + ' already exists.');
         }
+    }
+
+    public void createMatch() {
+        
+
+        riotMatch = new Match__c(Name = String.valueOf(Match.gameId));
+
+        riotMatch.Creation_Time__c = DateTime.newInstance(Match.gameCreation);
+        riotMatch.Season__c = String.valueOf(Match.seasonId);
+        riotMatch.Mode__c = String.valueOf(Match.gameMode);
+        riotMatch.Queue__c = String.valueOf(Match.queueId);
+        riotMatch.Map__c = String.valueOf(Match.mapId);
+        riotMatch.Duration__c = Match.gameDuration;
+        riotMatch.Platform__c = Match.platformId;
+        riotMatch.Version__c = Match.gameVersion;
+        riotMatch.Blue_Team__c = blueTeam.Id;
+        riotMatch.Red_Team__c = redTeam.Id;
+        riotMatch.Type__c = Match.gameType;
+        riotMatch.Status__c = 'Game Finished';
+        insertMatch(riotMatch);
     }
 
     public void insertMatch(Match__c match) {
@@ -113,28 +116,71 @@ public with sharing class RiotMatchObjectParser {
     }
 
     public void createTeam() {
-        blueTeam = new Team__c(Team__c = 'Blue');
-        redTeam = new Team__c(Team__c = 'Red');
+        List<Team__c> teamList = new List<Team__c>();
+        List<String> bannedChampionFields = new List<String>{'Banned_Champion_1__c', 'Banned_Champion_2__c','Banned_Champion_3__c','Banned_Champion_4__c', 'Banned_Champion_5__c', 'Banned_Champion_6__c', 'Banned_Champion_7__c', 'Banned_Champion_8__c', 'Banned_Champion_9__c', 'Banned_Champion_10__c'};
+        List<Integer> championBans = new List<Integer>();
+
+        blueTeam = new Team__c(RecordTypeId = Schema.SObjectType.Team__c.getRecordTypeInfosByDeveloperName().get('Blue').getRecordTypeId());
+        redTeam = new Team__c(RecordTypeId = Schema.SObjectType.Team__c.getRecordTypeInfosByDeveloperName().get('Red').getRecordTypeId());
+
+        teamList.add(blueTeam);
+        teamList.add(redTeam);
 
         if (Match.teams[0].win == 'Win') {
             blueTeam.Win__c = true;
-            blueTeam.Win__c = false;
+            redTeam.Win__c = false;
         } else if (Match.teams[0].win == 'Fail') {
             blueTeam.Win__c = false;
-            blueTeam.Win__c = true;
+            redTeam.Win__c = true;
+        }
+        
+        for (Integer i = 0; i < Match.teams.size(); i++) {
+            teamList[i].First_Blood__c = Match.teams[i].firstBlood;
+            teamList[i].First_Tower__c = Match.teams[i].firstTower;
+            teamList[i].First_Inhibitor__c = Match.teams[i].firstInhibitor;
+            teamList[i].First_Baron__c = Match.teams[i].firstBaron;
+            teamList[i].First_Dragon__c = Match.teams[i].firstDragon;
+            teamList[i].First_Rift_Heral__c = Match.teams[i].firstRiftHerald;
+            teamList[i].Tower_Kills__c = Match.teams[i].towerKills;
+            teamList[i].Inhibitor_Kills__c = Match.teams[i].inhibitorKills;
+            teamList[i].Baron_Kills__c = Match.teams[i].baronKills;
+            teamList[i].Dragon_Kills__c = Match.teams[i].dragonKills;
+            teamList[i].Vilemaw_Kills__c = Match.teams[i].vilemawKills;
+            teamList[i].Rift_Herald_Kills__c = Match.teams[i].riftHeraldKills;
+            teamList[i].Dominion_Victory_Score__c = Match.teams[i].dominionVictoryScore;
+            for (Integer j = 0; j < 10; j++) {
+                for (RiotJSON.Bans ban : Match.teams[i].bans) {
+                    if ((ban.pickTurn - 1) == j) {
+                        championBans.add(ban.championId);
+                    } else {
+                        championBans.add(null);
+                    }
+                }
+                if (j < 5) {
+                    blueTeam.put(bannedChampionFields[j], findChampionId(championBans[j]));
+                } else {
+                    redTeam.put(bannedChampionFields[j], findChampionId(championBans[j]));
+                }
+            }
         }
 
-        insertTeams(blueTeam, redTeam);
+        insertTeams(teamList);
     }
 
-    public void insertTeams(Team__c blueTeam, Team__c redTeam) {
-        List<Team__c> tempTeams = new List<Team__c>();
-        tempTeams.add(blueTeam);
-		tempTeams.add(redTeam);
+    public Id findChampionId(Integer id){
+        for (Champion__c champ : championList) {
+            if (champ.Champion_ID__c == id) {
+                return champ.id;
+            }
+        }
+        return null;
+    }
+
+    public void insertTeams(List<Team__c> teamList) {
         System.Savepoint sp = Database.setSavePoint();
 
         try {
-            insert tempTeams;
+            insert teamList;
         } catch (DMLException e) {
             System.debug(e);
             Database.rollback(sp);
@@ -173,10 +219,7 @@ public with sharing class RiotMatchObjectParser {
             Database.rollback(sp);
         }
         for (Participant__c participant : participantList) {
-            System.debug(
-                'Created Participant with Id: ' +
-                participant.Id
-            );
+            System.debug('Created Participant with Id: ' + participant.Id);
         }
     }
 

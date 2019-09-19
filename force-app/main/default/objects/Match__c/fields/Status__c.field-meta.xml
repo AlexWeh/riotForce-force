@@ -21,11 +21,6 @@
                 <label>Game Finished</label>
             </value>
             <value>
-                <fullName>Waiting</fullName>
-                <default>false</default>
-                <label>Waiting</label>
-            </value>
-            <value>
                 <fullName>In Review</fullName>
                 <default>false</default>
                 <label>In Review</label>
