@@ -5,24 +5,6 @@
         "paths": {
             "c/matchIDRequester": [
                 "matchIDRequester/matchIDRequester.js"
-            ],
-            "c/punycode": [
-                "../../../../node_modules copy/punycode/punycode.js"
-            ],
-            "c/aws4": [
-                "../../../../node_modules copy/aws4/aws4.js"
-            ],
-            "c/tests": [
-                "../../../../node_modules copy/uri-js/tests/tests.js"
-            ],
-            "c/request": [
-                "../../../../node_modules copy/request/request.js"
-            ],
-            "c/yargs": [
-                "../../../../node_modules copy/yargs/yargs.js"
-            ],
-            "c/isstream": [
-                "../../../../node_modules copy/isstream/isstream.js"
             ]
         }
     },

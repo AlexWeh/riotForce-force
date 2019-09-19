@@ -15,6 +15,7 @@ public with sharing class RiotMatchObjectParser {
         createMatch();
         createPlayer();
         createParticipant();
+        System.debug('Ende');
     }
 
     public void createMatch() {
@@ -130,7 +131,7 @@ public with sharing class RiotMatchObjectParser {
 	} 
 
     public void createParticipant() {
-        Integer counter;
+        Integer counter = 0;
         participantList = new List<Participant__c>();
         for (RiotJson.Participant participant : Match.participants) {
 

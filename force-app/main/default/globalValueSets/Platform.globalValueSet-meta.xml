@@ -5,6 +5,16 @@
         <default>false</default>
         <label>EUW1</label>
     </customValue>
+    <customValue>
+        <fullName>EUN1</fullName>
+        <default>false</default>
+        <label>EUN1</label>
+    </customValue>
+    <customValue>
+        <fullName>TR1</fullName>
+        <default>false</default>
+        <label>TR1</label>
+    </customValue>
     <masterLabel>Platform</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

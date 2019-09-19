@@ -11,9 +11,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>1</fullName>
+                <fullName>11</fullName>
                 <default>false</default>
-                <label>Summoner's Rift</label>
+                <label>Summoner&#39;s Rift</label>
             </value>
         </valueSetDefinition>
     </valueSet>
