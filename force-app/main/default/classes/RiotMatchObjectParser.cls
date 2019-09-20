@@ -30,8 +30,6 @@ public with sharing class RiotMatchObjectParser {
     }
 
     public void createMatch() {
-        
-
         riotMatch = new Match__c(Name = String.valueOf(Match.gameId));
 
         riotMatch.Creation_Time__c = DateTime.newInstance(Match.gameCreation);
@@ -117,11 +115,37 @@ public with sharing class RiotMatchObjectParser {
 
     public void createTeam() {
         List<Team__c> teamList = new List<Team__c>();
-        List<String> bannedChampionFields = new List<String>{'Banned_Champion_1__c', 'Banned_Champion_2__c','Banned_Champion_3__c','Banned_Champion_4__c', 'Banned_Champion_5__c', 'Banned_Champion_6__c', 'Banned_Champion_7__c', 'Banned_Champion_8__c', 'Banned_Champion_9__c', 'Banned_Champion_10__c'};
+        List<Integer> pickTurnList = new List<Integer>();
+        List<String> bannedChampionFields = new List<String>{
+            'Banned_Champion_1__c',
+            'Banned_Champion_2__c',
+            'Banned_Champion_3__c',
+            'Banned_Champion_4__c',
+            'Banned_Champion_5__c',
+            'Banned_Champion_6__c',
+            'Banned_Champion_7__c',
+            'Banned_Champion_8__c',
+            'Banned_Champion_9__c',
+            'Banned_Champion_10__c'
+        };
         List<Integer> championBans = new List<Integer>();
 
-        blueTeam = new Team__c(RecordTypeId = Schema.SObjectType.Team__c.getRecordTypeInfosByDeveloperName().get('Blue').getRecordTypeId());
-        redTeam = new Team__c(RecordTypeId = Schema.SObjectType.Team__c.getRecordTypeInfosByDeveloperName().get('Red').getRecordTypeId());
+        for (Integer i = 0; i < 10; i++) {
+            championBans.add(null);
+        }
+
+        blueTeam = new Team__c(
+            RecordTypeId =
+                Schema.SObjectType.Team__c.getRecordTypeInfosByDeveloperName()
+                    .get('Blue')
+                    .getRecordTypeId()
+        );
+        redTeam = new Team__c(
+            RecordTypeId =
+                Schema.SObjectType.Team__c.getRecordTypeInfosByDeveloperName()
+                    .get('Red')
+                    .getRecordTypeId()
+        );
 
         teamList.add(blueTeam);
         teamList.add(redTeam);
@@ -133,7 +157,7 @@ public with sharing class RiotMatchObjectParser {
             blueTeam.Win__c = false;
             redTeam.Win__c = true;
         }
-        
+
         for (Integer i = 0; i < Match.teams.size(); i++) {
             teamList[i].First_Blood__c = Match.teams[i].firstBlood;
             teamList[i].First_Tower__c = Match.teams[i].firstTower;
@@ -148,26 +172,29 @@ public with sharing class RiotMatchObjectParser {
             teamList[i].Vilemaw_Kills__c = Match.teams[i].vilemawKills;
             teamList[i].Rift_Herald_Kills__c = Match.teams[i].riftHeraldKills;
             teamList[i].Dominion_Victory_Score__c = Match.teams[i].dominionVictoryScore;
-            for (Integer j = 0; j < 10; j++) {
-                for (RiotJSON.Bans ban : Match.teams[i].bans) {
-                    if ((ban.pickTurn - 1) == j) {
-                        championBans.add(ban.championId);
-                    } else {
-                        championBans.add(null);
-                    }
-                }
-                if (j < 5) {
-                    blueTeam.put(bannedChampionFields[j], findChampionId(championBans[j]));
-                } else {
-                    redTeam.put(bannedChampionFields[j], findChampionId(championBans[j]));
-                }
+            for (RiotJSON.Bans ban : Match.teams[0].bans) {
+                championBans.set(ban.pickTurn, ban.championId);
+            }
+        }
+
+        for (Integer j = 0; j < 10; j++) {
+            if (j < 5) {
+                blueTeam.put(
+                    bannedChampionFields[j],
+                    findChampionId(championBans[j])
+                );
+            } else {
+                redTeam.put(
+                    bannedChampionFields[j],
+                    findChampionId(championBans[j])
+                );
             }
         }
 
         insertTeams(teamList);
     }
 
-    public Id findChampionId(Integer id){
+    public Id findChampionId(Integer id) {
         for (Champion__c champ : championList) {
             if (champ.Champion_ID__c == id) {
                 return champ.id;
