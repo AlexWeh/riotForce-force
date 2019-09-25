@@ -1,7 +1,8 @@
 import { LightningElement } from 'lwc';
+import makeRequest from '@salesforce/apex/RiotMatchIdRequester.makeRequest';
 
 export default class MatchIDRequester extends LightningElement {
-    handleRequest(){
-        
+    handleRequest(event){
+        makeRequest(event);
     }
 }

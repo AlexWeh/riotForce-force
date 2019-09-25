@@ -19,7 +19,9 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Match Viewer</label>
     <navType>Standard</navType>
+    <tabs>standard-home</tabs>
     <tabs>Match__c</tabs>
+    <tabs>Participant__c</tabs>
     <tabs>Player__c</tabs>
     <tabs>Champion__c</tabs>
     <uiType>Lightning</uiType>

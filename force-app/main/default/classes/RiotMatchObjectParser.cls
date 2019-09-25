@@ -96,9 +96,10 @@ public with sharing class RiotMatchObjectParser {
 
     public void insertPlayer(List<Player__c> playerList) {
         System.Savepoint sp = Database.setSavePoint();
+        List<Database.SaveResult> saveResult = new List<Database.SaveResult>();
 
         try {
-            insert playerList;
+            saveResult = Database.insert(playerList, false) ;
         } catch (DMLException e) {
             System.debug(e);
             Database.rollback(sp);

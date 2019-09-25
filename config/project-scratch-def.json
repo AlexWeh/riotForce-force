@@ -1,6 +1,7 @@
 {
   "orgName": "riotForce Company",
   "edition": "Developer",
+  "release": "Preview",
   "features": ["API", "DebugApex"],
   "settings": {
     "orgPreferenceSettings": {
