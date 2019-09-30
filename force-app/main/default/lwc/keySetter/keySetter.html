@@ -1,7 +1,8 @@
 <template>
     <lightning-card title="API Key Setter">
         <div class="slds-m-around_medium">
-            <lightning-record-edit-form object-api-name={user} record-id={userId}>
+            <p><lightning-formatted-url value="https://developer.riotgames.com/" ></lightning-formatted-url></p>
+            <lightning-record-edit-form object-api-name={user} record-id={userId} onsuccess={handleSuccess} onerror={handleError}>
                 <lightning-messages></lightning-messages>
                 <lightning-input-field field-name={apiKey}></lightning-input-field>
                 <lightning-input-field field-name={timeGenerated}></lightning-input-field>

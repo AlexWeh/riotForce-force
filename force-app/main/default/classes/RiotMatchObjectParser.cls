@@ -7,7 +7,7 @@ public with sharing class RiotMatchObjectParser {
     public Team__c blueTeam;
     public Team__c redTeam;
     public List<Champion__c> championList;
-    public List<String> championList;
+    public List<String> championIds;
 
 
     public RiotMatchObjectParser(RiotJSON Match) {

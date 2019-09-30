@@ -29,7 +29,7 @@ public with sharing class RiotMatchIdRequester {
         else {
             System.debug('Response Code:' + response.getStatusCode());
             System.debug(response.getBody());
-            return response.toString() + ' error';
+            throw new System.CalloutException(response.toString());
         }
     }
 }
