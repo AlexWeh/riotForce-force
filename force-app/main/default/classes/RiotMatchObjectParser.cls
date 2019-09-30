@@ -7,6 +7,8 @@ public with sharing class RiotMatchObjectParser {
     public Team__c blueTeam;
     public Team__c redTeam;
     public List<Champion__c> championList;
+    public List<String> championList;
+
 
     public RiotMatchObjectParser(RiotJSON Match) {
         this.Match = Match;
@@ -14,6 +16,10 @@ public with sharing class RiotMatchObjectParser {
 
     public void initObjects() {
         championList = [SELECT Id, Name, Champion_ID__c FROM Champion__c];
+        championIds = new List<String>();
+        for (Champion__c champ : championList) {
+            championIds.add(champ.id);
+        }
         List<Match__c> existingMatches = [SELECT Id, Name FROM Match__c];
         List<String> existingMatchNames = new List<String>();
         for (Match__c match : existingMatches) {
@@ -62,25 +68,16 @@ public with sharing class RiotMatchObjectParser {
     }
 
     public void createPlayer() {
-        Integer counter = 0;
         playerList = new List<Player__c>();
-        for (Integer i = 0; i < 10; i++) {
-            playerList.add(null);
-        }
         playersToInsert = new List<Player__c>();
-        List<Player__c> existingPlayers = [
-            SELECT Id, Name, Summoner_ID__c
-            FROM Player__c
-        ];
-        List<String> existingPlayerIds = new List<String>();
 
+        List<Player__c> existingPlayers = [SELECT Id, Name, Summoner_ID__c FROM Player__c];
+        List<String> existingPlayerIds = new List<String>();
         for (Player__c player : existingPlayers) {
             existingPlayerIds.add(player.Summoner_ID__c);
         }
 
-        for (
-            RiotJSON.ParticipantIdentities idPlayer : Match.participantIdentities
-        ) {
+        for (RiotJSON.ParticipantIdentities idPlayer : Match.participantIdentities) {
             if (!existingPlayerIds.contains(idPlayer.player.summonerId)) {
                 Player__c riotPlayer = new Player__c(
                     Name = idPlayer.player.summonerName
@@ -91,27 +88,44 @@ public with sharing class RiotMatchObjectParser {
                 riotPlayer.Account_ID__c = idPlayer.player.accountId;
                 riotPlayer.Platform__c = idPlayer.player.platformId;
                 playerList.add(riotPlayer);
+                playersToInsert.add(riotPlayer);
             } else {
-                playerList.add(existingPlayers[counter]);
+                playerList.add(existingPlayers[existingPlayerIds.indexOf(idPlayer.player.summonerId)]);
             }
-            counter++;
         }
-        insertPlayer(playerList);
+        insertPlayer(playersToInsert);
     }
 
-    public void insertPlayer(List<Player__c> playerList) {
+    public void insertPlayer(List<Player__c> playersToInsert) {
+        Integer insertedPlayerPointer = 0;
         System.Savepoint sp = Database.setSavePoint();
         List<Database.SaveResult> saveResult = new List<Database.SaveResult>();
 
         try {
-            saveResult = Database.insert(playerList, false) ;
+            saveResult = Database.insert(playersToInsert, false) ;
         } catch (DMLException e) {
             System.debug(e);
             Database.rollback(sp);
         }
+
         for (Player__c player : playerList) {
             System.debug(
-                'Created Player with Id: ' +
+                'Created or Added Player with Id: ' +
+                player.Id +
+                ' and Name: ' +
+                player.Name
+            );
+        }
+
+        for (Integer i = 0; i < playerList.size(); i++) {
+            if (playersToInsert.contains(playerList[i])) {
+                playerList[i] = playersToInsert[playersToInsert.indexOf(playerList[i])];
+            }
+        }
+
+        for (Player__c player : playerList) {
+            System.debug(
+                'Created or Added Player with Id: ' +
                 player.Id +
                 ' and Name: ' +
                 player.Name
@@ -122,7 +136,7 @@ public with sharing class RiotMatchObjectParser {
     public void createTeam() {
         List<Team__c> teamList = new List<Team__c>();
         List<Integer> pickTurnList = new List<Integer>();
-        List<String> bannedChampionFields = new List<String>{
+        /*List<String> bannedChampionFields = new List<String>{
             'Banned_Champion_1__c',
             'Banned_Champion_2__c',
             'Banned_Champion_3__c',
@@ -138,7 +152,7 @@ public with sharing class RiotMatchObjectParser {
 
         for (Integer i = 0; i < 10; i++) {
             championBans.add(null);
-        }
+        }*/
 
         blueTeam = new Team__c(
             RecordTypeId =
@@ -200,14 +214,14 @@ public with sharing class RiotMatchObjectParser {
         insertTeams(teamList);
     }
 
-    public Id findChampionId(Integer id) {
+    /*public Id findChampionId(Integer id) {
         for (Champion__c champ : championList) {
             if (champ.Champion_ID__c == id) {
                 return champ.id;
             }
         }
         return null;
-    }
+    }*/
 
     public void insertTeams(List<Team__c> teamList) {
         System.Savepoint sp = Database.setSavePoint();

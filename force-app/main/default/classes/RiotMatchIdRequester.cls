@@ -7,8 +7,10 @@ public with sharing class RiotMatchIdRequester {
         RiotJSON Match;
         RiotMatchObjectParser matchObject;
         System.debug('ID: ' + userID);
-        String API_Key = [SELECT Id, API_Key__c FROM User WHERE Id=:userID LIMIT 1].API_Key__c;
+        String API_Key = '';
+        API_Key = [SELECT Id, API_Key__c FROM User WHERE Id=:userID LIMIT 1].API_Key__c;
         System.debug('API Key: ' + API_Key);
+        
         Http http = new Http();
         HttpRequest request = new HttpRequest();
         request.setEndpoint('callout:RiotApiKey' + RIOT_MATCH_ENDPOINT + matchId + '?api_key=' + API_Key);

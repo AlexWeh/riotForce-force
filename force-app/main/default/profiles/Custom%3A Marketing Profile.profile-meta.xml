@@ -257,6 +257,11 @@
         <field>User.API_Key__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>User.Time_Key_Generated__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Champion__c-Champion Layout</layout>
     </layoutAssignments>

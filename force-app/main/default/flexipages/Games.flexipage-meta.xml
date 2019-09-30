@@ -8,6 +8,9 @@
         <componentInstances>
             <componentName>matchIDRequester</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentName>keySetter</componentName>
+        </componentInstances>
         <name>bottomLeft</name>
         <type>Region</type>
     </flexiPageRegions>
