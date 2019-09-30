@@ -2,15 +2,16 @@ public with sharing class RiotMatchIdRequester {
     public RiotMatchIdRequester() {}
 
     @AuraEnabled
-    public static String makeRequest(String matchId, String key){
+    public static String makeRequest(String matchId, String userID){
         String RIOT_MATCH_ENDPOINT = '/lol/match/v4/matches/';
-        String API_KEY = 'RGAPI-c338eab5-0531-4ff6-84cd-93a945ad6950'; 
         RiotJSON Match;
         RiotMatchObjectParser matchObject;
-
+        System.debug('ID: ' + userID);
+        String API_Key = [SELECT Id, API_Key__c FROM User WHERE Id=:userID LIMIT 1].API_Key__c;
+        System.debug('API Key: ' + API_Key);
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        request.setEndpoint('callout:RiotApiKey' + RIOT_MATCH_ENDPOINT + matchId + '?api_key=' + key);
+        request.setEndpoint('callout:RiotApiKey' + RIOT_MATCH_ENDPOINT + matchId + '?api_key=' + API_Key);
         request.setMethod('GET');
         //request.setHeader('X-Riot-Token','{!$Credential.Password}');
         System.debug(request.getEndpoint());
