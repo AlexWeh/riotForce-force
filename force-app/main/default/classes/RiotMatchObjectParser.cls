@@ -2,6 +2,7 @@ public with sharing class RiotMatchObjectParser {
     private RiotJSON Match;
     public Match__c riotMatch;
     public List<Player__c> playerList;
+    public List<Player__c> playersToInsert;
     public List<Participant__c> participantList;
     public Team__c blueTeam;
     public Team__c redTeam;
@@ -63,8 +64,12 @@ public with sharing class RiotMatchObjectParser {
     public void createPlayer() {
         Integer counter = 0;
         playerList = new List<Player__c>();
+        for (Integer i = 0; i < 10; i++) {
+            playerList.add(null);
+        }
+        playersToInsert = new List<Player__c>();
         List<Player__c> existingPlayers = [
-            SELECT Id, Summoner_ID__c
+            SELECT Id, Name, Summoner_ID__c
             FROM Player__c
         ];
         List<String> existingPlayerIds = new List<String>();
@@ -173,12 +178,12 @@ public with sharing class RiotMatchObjectParser {
             teamList[i].Vilemaw_Kills__c = Match.teams[i].vilemawKills;
             teamList[i].Rift_Herald_Kills__c = Match.teams[i].riftHeraldKills;
             teamList[i].Dominion_Victory_Score__c = Match.teams[i].dominionVictoryScore;
-            for (RiotJSON.Bans ban : Match.teams[0].bans) {
+            /*for (RiotJSON.Bans ban : Match.teams[0].bans) {
                 championBans.set(ban.pickTurn, ban.championId);
-            }
+            }*/
         }
 
-        for (Integer j = 0; j < 10; j++) {
+        /*for (Integer j = 0; j < 10; j++) {
             if (j < 5) {
                 blueTeam.put(
                     bannedChampionFields[j],
@@ -190,7 +195,7 @@ public with sharing class RiotMatchObjectParser {
                     findChampionId(championBans[j])
                 );
             }
-        }
+        }*/
 
         insertTeams(teamList);
     }

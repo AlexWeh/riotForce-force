@@ -3,6 +3,9 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/keySetter": [
+                "keySetter/keySetter.js"
+            ],
             "c/matchIDRequester": [
                 "matchIDRequester/matchIDRequester.js"
             ]

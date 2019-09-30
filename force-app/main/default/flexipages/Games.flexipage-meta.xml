@@ -5,6 +5,9 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <componentInstances>
+            <componentName>matchIDRequester</componentName>
+        </componentInstances>
         <name>bottomLeft</name>
         <type>Region</type>
     </flexiPageRegions>

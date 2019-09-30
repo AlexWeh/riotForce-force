@@ -1,16 +1,16 @@
 public with sharing class RiotMatchIdRequester {
-
-    private static String RIOT_MATCH_ENDPOINT = '/lol/match/v4/matches/';
-    private static String API_KEY = 'RGAPI-a3ee7775-25e6-4fc1-90e8-b86523d07c5e'; 
-    private RiotJSON Match;
-    private RiotMatchObjectParser matchObject;
-
     public RiotMatchIdRequester() {}
 
-    public void makeRequest(String matchId){
+    @AuraEnabled
+    public static String makeRequest(String matchId, String key){
+        String RIOT_MATCH_ENDPOINT = '/lol/match/v4/matches/';
+        String API_KEY = 'RGAPI-c338eab5-0531-4ff6-84cd-93a945ad6950'; 
+        RiotJSON Match;
+        RiotMatchObjectParser matchObject;
+
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        request.setEndpoint('callout:RiotApiKey' + RIOT_MATCH_ENDPOINT + matchId + '?api_key=' + API_KEY);
+        request.setEndpoint('callout:RiotApiKey' + RIOT_MATCH_ENDPOINT + matchId + '?api_key=' + key);
         request.setMethod('GET');
         //request.setHeader('X-Riot-Token','{!$Credential.Password}');
         System.debug(request.getEndpoint());
@@ -20,11 +20,13 @@ public with sharing class RiotMatchIdRequester {
             Match = (RiotJSON) JSON.deserialize(response.getBody(), RiotJSON.class);
             matchObject = new RiotMatchObjectParser(Match);
             matchObject.initObjects();
+            return response.toString() + ' success';
         }
 
         else {
             System.debug('Response Code:' + response.getStatusCode());
             System.debug(response.getBody());
+            return response.toString() + ' error';
         }
     }
 }
