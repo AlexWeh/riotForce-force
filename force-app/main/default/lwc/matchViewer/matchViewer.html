@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Matches">
+        <div class="slds-m-around_medium">
+            <lightning-button variant="neutral" name="collaps" label="Collaps all"></lightning-button>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-tree-grid columns={columns} data={data} key-field="name"></lightning-tree-grid>
+        </div>
+    </lightning-card>
+</template>
