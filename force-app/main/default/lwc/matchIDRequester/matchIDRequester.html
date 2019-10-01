@@ -1,21 +1,12 @@
 <template>
     <lightning-card title="Match ID API Request">
         <div class="slds-m-around_medium">
-            <lightning-input
-                label="Match ID"
-                type="search"
-                value={matchID}
-                onchange={handleMatchId}>
+            <lightning-input label="Match ID" type="search" value={matchID} onchange={handleMatchId}>
             </lightning-input>
         </div>
         <div>
-            <lightning-button 
-                variant="brand" 
-                label="Go!" 
-                title="Go" 
-                onclick={handleRequest} 
-                class="slds-m-left_x-small">
-            </lightning-button>
+            <lightning-button variant="brand" label="Go!" title="Go" onclick={handleRequest}
+                class="slds-m-left_x-small"></lightning-button>
         </div>
     </lightning-card>
 </template>

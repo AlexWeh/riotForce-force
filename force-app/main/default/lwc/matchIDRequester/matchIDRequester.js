@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { LightningElement, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import ID from '@salesforce/user/Id';
@@ -18,7 +17,6 @@ export default class MatchIDRequester extends LightningElement {
     }
 
     handleRequest(){
-        console.log('Fire!');
         makeRequest({ matchId: this.matchId, userID: this.userID })
             .then(result => {
                 this.result = result;
@@ -28,7 +26,7 @@ export default class MatchIDRequester extends LightningElement {
             .catch(error => {
                 this.error = error;
                 this.result = undefined;
-                this.handleError(this.error);
+                this.handleError(this.error.body.message);
             });
     }
 

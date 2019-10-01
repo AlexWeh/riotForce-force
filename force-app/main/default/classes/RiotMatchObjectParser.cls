@@ -32,7 +32,7 @@ public with sharing class RiotMatchObjectParser {
             createPlayer();
             createParticipant();
         } else {
-            System.debug('Match: ' + Match.gameId + ' already exists.');
+            throw new AuraException('Match: ' + Match.gameId + ' already exists.');
         }
     }
 

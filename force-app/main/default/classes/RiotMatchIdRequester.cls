@@ -22,14 +22,18 @@ public with sharing class RiotMatchIdRequester {
         if(response.getStatusCode() == 200){
             Match = (RiotJSON) JSON.deserialize(response.getBody(), RiotJSON.class);
             matchObject = new RiotMatchObjectParser(Match);
-            matchObject.initObjects();
+            try {
+                matchObject.initObjects();
+            } catch (Exception e) {
+                throw new AuraHandledException(e.getMessage());
+            } 
             return response.toString() + ' success';
         }
 
         else {
             System.debug('Response Code:' + response.getStatusCode());
             System.debug(response.getBody());
-            throw new System.CalloutException(response.toString());
+            throw new CalloutException(response.toString());
         }
     }
 }
