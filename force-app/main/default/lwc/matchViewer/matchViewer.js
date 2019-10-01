@@ -3,69 +3,38 @@ import { LightningElement, track } from 'lwc';
 const columns = [
     {
         type: 'text',
-        fieldName: 'accountName',
-        label: 'Account Name'
+        fieldName: 'recordName',
+        label: 'Name'
     },
     {
-        type: 'number',
-        fieldName: 'employees',
-        label: 'Employees'
-    },
-    {
-        type: 'phone',
-        fieldName: 'phone',
-        label: 'Phone Number'
-    },
-    {
-        type: 'url',
-        fieldName: 'accountOwner',
-        label: 'Account Owner',
-        typeAttributes: {
-            label: { fieldName: 'accountOwnerName' }
-        }
+        type: 'date',
+        fieldName: 'Creation_Time__c',
+        label: 'Date Played'
     }
 ];
 
 const nestedData = [
     {
         "name": "123555",
-        "accountName": "Rewis Inc",
-        "employees": 3100,
-        "phone": "837-555-1212",
-        "accountOwner": "http://example.com/jane-doe",
-        "accountOwnerName": "Jane Doe"
+        "recordName": "Rewis Inc",
+        "Creation_Time__c": "2019-09-04T11:46:24.000+0000"
     },
     {
         "name": "123556",
-        "accountName": "Acme Corporation",
-        "employees": 10000,
-        "phone": "837-555-1212",
-        "accountOwner": "http://example.com/john-doe",
-        "accountOwnerName": "John Doe",
+        "recordName": "Acme Corporation",
         "_children": [
             {
                 "name": "123556-A",
-                "accountName": "Acme Corporation (Bay Area)",
-                "employees": 3000,
-                "phone": "837-555-1212",
-                "accountOwner": "http://example.com/john-doe",
-                "accountOwnerName": "John Doe",
+                "recordName": "Acme Corporation (Bay Area)",
+                "Creation_Time__c": "2019-09-04T14:27:33.000+0000",
                 "_children": [
                     {
                         "name": "123556-A-A",
-                        "accountName": "Acme Corporation (Oakland)",
-                        "employees": 745,
-                        "phone": "837-555-1212",
-                        "accountOwner": "http://example.com/john-doe",
-                        "accountOwnerName": "John Doe"
+                        "recordName": "Acme Corporation (Oakland)"
                     },
                     {
                         "name": "123556-A-B",
-                        "accountName": "Acme Corporation (San Francisco)",
-                        "employees": 578,
-                        "phone": "837-555-1212",
-                        "accountOwner": "http://example.com/jane-doe",
-                        "accountOwnerName": "Jane Doe"
+                        "recordName": "Acme Corporation (San Francisco)"
                     }
                 ]
             }
