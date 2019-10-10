@@ -1,0 +1,1076 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef1"
+            },
+            "Name": "Aatrox",
+            "Champion_ID__c": 266
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef2"
+            },
+            "Name": "Ahri",
+            "Champion_ID__c": 103
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef3"
+            },
+            "Name": "Akali",
+            "Champion_ID__c": 84
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef4"
+            },
+            "Name": "Annie",
+            "Champion_ID__c": 1
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef5"
+            },
+            "Name": "Ashe",
+            "Champion_ID__c": 22
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef6"
+            },
+            "Name": "AurelionSol",
+            "Champion_ID__c": 136
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef7"
+            },
+            "Name": "Azir",
+            "Champion_ID__c": 268
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef8"
+            },
+            "Name": "Bard",
+            "Champion_ID__c": 432
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef9"
+            },
+            "Name": "Blitzcrank",
+            "Champion_ID__c": 53
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef10"
+            },
+            "Name": "Brand",
+            "Champion_ID__c": 63
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef11"
+            },
+            "Name": "Braum",
+            "Champion_ID__c": 201
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef12"
+            },
+            "Name": "Caitlyn",
+            "Champion_ID__c": 51
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef13"
+            },
+            "Name": "Camille",
+            "Champion_ID__c": 164
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef14"
+            },
+            "Name": "Cassiopeia",
+            "Champion_ID__c": 69
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef15"
+            },
+            "Name": "Chogath",
+            "Champion_ID__c": 31
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef16"
+            },
+            "Name": "Corki",
+            "Champion_ID__c": 42
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef17"
+            },
+            "Name": "Darius",
+            "Champion_ID__c": 122
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef18"
+            },
+            "Name": "Diana",
+            "Champion_ID__c": 131
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef19"
+            },
+            "Name": "Alistar",
+            "Champion_ID__c": 12
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef20"
+            },
+            "Name": "Amumu",
+            "Champion_ID__c": 32
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef21"
+            },
+            "Name": "Anivia",
+            "Champion_ID__c": 34
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef22"
+            },
+            "Name": "Draven",
+            "Champion_ID__c": 119
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef23"
+            },
+            "Name": "DrMundo",
+            "Champion_ID__c": 36
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef24"
+            },
+            "Name": "Ekko",
+            "Champion_ID__c": 245
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef25"
+            },
+            "Name": "Elise",
+            "Champion_ID__c": 60
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef26"
+            },
+            "Name": "Evelynn",
+            "Champion_ID__c": 28
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef27"
+            },
+            "Name": "Ezreal",
+            "Champion_ID__c": 81
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef28"
+            },
+            "Name": "FiddleSticks",
+            "Champion_ID__c": 9
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef29"
+            },
+            "Name": "Fiora",
+            "Champion_ID__c": 114
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef30"
+            },
+            "Name": "Fizz",
+            "Champion_ID__c": 105
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef31"
+            },
+            "Name": "Galio",
+            "Champion_ID__c": 3
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef32"
+            },
+            "Name": "Gangplank",
+            "Champion_ID__c": 41
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef33"
+            },
+            "Name": "Garen",
+            "Champion_ID__c": 86
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef34"
+            },
+            "Name": "Gnar",
+            "Champion_ID__c": 150
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef35"
+            },
+            "Name": "Gragas",
+            "Champion_ID__c": 79
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef36"
+            },
+            "Name": "Graves",
+            "Champion_ID__c": 104
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef37"
+            },
+            "Name": "Hecarim",
+            "Champion_ID__c": 120
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef38"
+            },
+            "Name": "Heimerdinger",
+            "Champion_ID__c": 74
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef39"
+            },
+            "Name": "Illaoi",
+            "Champion_ID__c": 420
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef40"
+            },
+            "Name": "Irelia",
+            "Champion_ID__c": 39
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef41"
+            },
+            "Name": "Ivern",
+            "Champion_ID__c": 427
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef42"
+            },
+            "Name": "Janna",
+            "Champion_ID__c": 40
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef43"
+            },
+            "Name": "JarvanIV",
+            "Champion_ID__c": 59
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef44"
+            },
+            "Name": "Jax",
+            "Champion_ID__c": 24
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef45"
+            },
+            "Name": "Jayce",
+            "Champion_ID__c": 126
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef46"
+            },
+            "Name": "Jhin",
+            "Champion_ID__c": 202
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef47"
+            },
+            "Name": "Jinx",
+            "Champion_ID__c": 222
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef48"
+            },
+            "Name": "Kalista",
+            "Champion_ID__c": 429
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef49"
+            },
+            "Name": "Karma",
+            "Champion_ID__c": 43
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef50"
+            },
+            "Name": "Karthus",
+            "Champion_ID__c": 30
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef51"
+            },
+            "Name": "Kassadin",
+            "Champion_ID__c": 38
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef52"
+            },
+            "Name": "Katarina",
+            "Champion_ID__c": 55
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef53"
+            },
+            "Name": "Kayle",
+            "Champion_ID__c": 10
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef54"
+            },
+            "Name": "Kennen",
+            "Champion_ID__c": 85
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef55"
+            },
+            "Name": "Lissandra",
+            "Champion_ID__c": 127
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef56"
+            },
+            "Name": "Lucian",
+            "Champion_ID__c": 236
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef57"
+            },
+            "Name": "Lulu",
+            "Champion_ID__c": 117
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef58"
+            },
+            "Name": "Lux",
+            "Champion_ID__c": 99
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef59"
+            },
+            "Name": "Malphite",
+            "Champion_ID__c": 54
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef60"
+            },
+            "Name": "Malzahar",
+            "Champion_ID__c": 90
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef61"
+            },
+            "Name": "Maokai",
+            "Champion_ID__c": 57
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef62"
+            },
+            "Name": "MasterYi",
+            "Champion_ID__c": 11
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef63"
+            },
+            "Name": "MissFortune",
+            "Champion_ID__c": 21
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef64"
+            },
+            "Name": "MonkeyKing",
+            "Champion_ID__c": 62
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef65"
+            },
+            "Name": "Mordekaiser",
+            "Champion_ID__c": 82
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef66"
+            },
+            "Name": "Morgana",
+            "Champion_ID__c": 25
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef67"
+            },
+            "Name": "Nami",
+            "Champion_ID__c": 267
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef68"
+            },
+            "Name": "Nasus",
+            "Champion_ID__c": 75
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef69"
+            },
+            "Name": "Nautilus",
+            "Champion_ID__c": 111
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef70"
+            },
+            "Name": "Nidalee",
+            "Champion_ID__c": 76
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef71"
+            },
+            "Name": "Khazix",
+            "Champion_ID__c": 121
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef72"
+            },
+            "Name": "Kindred",
+            "Champion_ID__c": 203
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef73"
+            },
+            "Name": "Kled",
+            "Champion_ID__c": 240
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef74"
+            },
+            "Name": "KogMaw",
+            "Champion_ID__c": 96
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef75"
+            },
+            "Name": "Leblanc",
+            "Champion_ID__c": 7
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef76"
+            },
+            "Name": "LeeSin",
+            "Champion_ID__c": 64
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef77"
+            },
+            "Name": "Leona",
+            "Champion_ID__c": 89
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef78"
+            },
+            "Name": "Nocturne",
+            "Champion_ID__c": 56
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef79"
+            },
+            "Name": "Nunu",
+            "Champion_ID__c": 20
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef80"
+            },
+            "Name": "Olaf",
+            "Champion_ID__c": 2
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef81"
+            },
+            "Name": "Orianna",
+            "Champion_ID__c": 61
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef82"
+            },
+            "Name": "Pantheon",
+            "Champion_ID__c": 80
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef83"
+            },
+            "Name": "Poppy",
+            "Champion_ID__c": 78
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef84"
+            },
+            "Name": "Quinn",
+            "Champion_ID__c": 133
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef85"
+            },
+            "Name": "Rammus",
+            "Champion_ID__c": 33
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef86"
+            },
+            "Name": "RekSai",
+            "Champion_ID__c": 421
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef87"
+            },
+            "Name": "Renekton",
+            "Champion_ID__c": 58
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef88"
+            },
+            "Name": "Rengar",
+            "Champion_ID__c": 107
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef89"
+            },
+            "Name": "Riven",
+            "Champion_ID__c": 92
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef90"
+            },
+            "Name": "Rumble",
+            "Champion_ID__c": 68
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef91"
+            },
+            "Name": "Ryze",
+            "Champion_ID__c": 13
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef92"
+            },
+            "Name": "Sejuani",
+            "Champion_ID__c": 113
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef93"
+            },
+            "Name": "Shaco",
+            "Champion_ID__c": 35
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef94"
+            },
+            "Name": "Shen",
+            "Champion_ID__c": 98
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef95"
+            },
+            "Name": "Shyvana",
+            "Champion_ID__c": 102
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef96"
+            },
+            "Name": "Singed",
+            "Champion_ID__c": 27
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef97"
+            },
+            "Name": "Sion",
+            "Champion_ID__c": 14
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef98"
+            },
+            "Name": "Sivir",
+            "Champion_ID__c": 15
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef99"
+            },
+            "Name": "Skarner",
+            "Champion_ID__c": 72
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef100"
+            },
+            "Name": "Sona",
+            "Champion_ID__c": 37
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef101"
+            },
+            "Name": "Soraka",
+            "Champion_ID__c": 16
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef102"
+            },
+            "Name": "Swain",
+            "Champion_ID__c": 50
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef103"
+            },
+            "Name": "Syndra",
+            "Champion_ID__c": 134
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef104"
+            },
+            "Name": "Varus",
+            "Champion_ID__c": 110
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef105"
+            },
+            "Name": "Vayne",
+            "Champion_ID__c": 67
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef106"
+            },
+            "Name": "Veigar",
+            "Champion_ID__c": 45
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef107"
+            },
+            "Name": "Velkoz",
+            "Champion_ID__c": 161
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef108"
+            },
+            "Name": "Vi",
+            "Champion_ID__c": 254
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef109"
+            },
+            "Name": "Viktor",
+            "Champion_ID__c": 112
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef110"
+            },
+            "Name": "Vladimir",
+            "Champion_ID__c": 8
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef111"
+            },
+            "Name": "TahmKench",
+            "Champion_ID__c": 223
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef112"
+            },
+            "Name": "Volibear",
+            "Champion_ID__c": 106
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef113"
+            },
+            "Name": "Warwick",
+            "Champion_ID__c": 19
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef114"
+            },
+            "Name": "Taliyah",
+            "Champion_ID__c": 163
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef115"
+            },
+            "Name": "Talon",
+            "Champion_ID__c": 91
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef116"
+            },
+            "Name": "Xerath",
+            "Champion_ID__c": 101
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef117"
+            },
+            "Name": "XinZhao",
+            "Champion_ID__c": 5
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef118"
+            },
+            "Name": "Yasuo",
+            "Champion_ID__c": 157
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef119"
+            },
+            "Name": "Taric",
+            "Champion_ID__c": 44
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef120"
+            },
+            "Name": "Teemo",
+            "Champion_ID__c": 17
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef121"
+            },
+            "Name": "Thresh",
+            "Champion_ID__c": 412
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef122"
+            },
+            "Name": "Tristana",
+            "Champion_ID__c": 18
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef123"
+            },
+            "Name": "Trundle",
+            "Champion_ID__c": 48
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef124"
+            },
+            "Name": "Tryndamere",
+            "Champion_ID__c": 23
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef125"
+            },
+            "Name": "TwistedFate",
+            "Champion_ID__c": 4
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef126"
+            },
+            "Name": "Twitch",
+            "Champion_ID__c": 29
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef127"
+            },
+            "Name": "Udyr",
+            "Champion_ID__c": 77
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef128"
+            },
+            "Name": "Urgot",
+            "Champion_ID__c": 6
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef129"
+            },
+            "Name": "Yorick",
+            "Champion_ID__c": 83
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef130"
+            },
+            "Name": "Zac",
+            "Champion_ID__c": 154
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef131"
+            },
+            "Name": "Zed",
+            "Champion_ID__c": 238
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef132"
+            },
+            "Name": "Ziggs",
+            "Champion_ID__c": 115
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef133"
+            },
+            "Name": "Zilean",
+            "Champion_ID__c": 26
+        },
+        {
+            "attributes": {
+                "type": "Champion__c",
+                "referenceId": "Champion__cRef134"
+            },
+            "Name": "Zyra",
+            "Champion_ID__c": 143
+        }
+    ]
+}

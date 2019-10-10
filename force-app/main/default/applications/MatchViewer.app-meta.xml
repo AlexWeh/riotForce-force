@@ -21,6 +21,7 @@
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
     <tabs>Match__c</tabs>
+    <tabs>Team__c</tabs>
     <tabs>Participant__c</tabs>
     <tabs>Player__c</tabs>
     <tabs>Champion__c</tabs>
