@@ -2,7 +2,6 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>All</fullName>
     <columns>NAME</columns>
-    <columns>Team__c</columns>
     <columns>Win__c</columns>
     <columns>First_Blood__c</columns>
     <columns>First_Tower__c</columns>

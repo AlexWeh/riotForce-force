@@ -3,15 +3,4 @@
     <fullName>Red</fullName>
     <active>true</active>
     <label>Red</label>
-    <picklistValues>
-        <picklist>Team__c</picklist>
-        <values>
-            <fullName>Blue</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Red</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
 </RecordType>
